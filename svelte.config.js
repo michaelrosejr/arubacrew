@@ -122,7 +122,10 @@ const config = {
       "@/*": "./src/lib/*",
     },
     paths: {
-      base: process.env.NODE_ENV === "production" ? "/arubacrew" : "",
+      base:
+        process.env.NODE_ENV === "production"
+          ? "/michaelrosejr.github.io/arubacrew"
+          : "",
     },
   },
 };

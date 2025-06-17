@@ -1,0 +1,1 @@
+import{f as t,d as i}from"./B0IUneNK.js";import{q as p,u as d,w as m,x as e,y as n}from"./vQVsj9q0.js";import{s as f}from"./Br6rTG-1.js";var v=t('<div class="mt-4"><!></div>');function h(r,o){p(o,!0);var a=v(),s=m(a);f(s,()=>o.children??e),n(a),i(r,a),d()}export{h as M};
