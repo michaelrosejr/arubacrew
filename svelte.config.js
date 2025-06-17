@@ -92,6 +92,20 @@ const config = {
   preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)],
 
   kit: {
+    prerender: {
+      handleHttpError: ({ path, message }) => {
+        // ignore deliberate link to shiny 404 page
+        if (path === "/src/lib/assets/fonts/inter-roman-latin.Di8DUHzh.woff2") {
+          return;
+        }
+        if (path === "/") {
+          // if the path is the root, we can ignore it
+          return;
+        }
+        // otherwise fail the build
+        throw new Error(message);
+      },
+    },
     // adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.
     // If your environment is not supported, or you settled on a specific environment, switch out the adapter.
     // See https://svelte.dev/docs/kit/adapters for more information about adapters.
