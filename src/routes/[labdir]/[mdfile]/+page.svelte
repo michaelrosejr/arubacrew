@@ -47,10 +47,12 @@
          prose-blockquote:dark:text-white"
       >
         <hgroup>
-          <h1 class="my-2 text-4xl font-semibold">{data.meta.title}</h1>
-          <p class="my-2 text-gray-500">
+          <div class=" text-black dark:text-white text-4xl font-semibold">
+            {data.meta.title}
+          </div>
+          <div class="my-2 text-gray-500">
             Published at {formatDate(data.meta.date)}
-          </p>
+          </div>
         </hgroup>
 
         <div class="tags">

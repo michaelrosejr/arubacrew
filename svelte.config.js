@@ -107,6 +107,9 @@ const config = {
     alias: {
       "@/*": "./src/lib/*",
     },
+    paths: {
+      base: process.env.NODE_ENV === "production" ? "/arubacrew" : "",
+    },
   },
 };
 

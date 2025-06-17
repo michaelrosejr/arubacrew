@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from "$app/paths";
   import { formatDate } from "$lib/utils";
   import * as config from "$lib/config";
   import * as Card from "$lib/components/ui/card/index.js";
@@ -26,7 +27,7 @@
   <div class="flex flex-wrap justify-center mx-1 mt-2">
     {#each data.posts as post}
       <div class="p-2 w-80">
-        <a href="{post.folder}/{post.slug}">
+        <a href="{base}/{post.folder}/{post.slug}">
           <div style="flex: 1; margin: 10px;">
             <Card.Root class="@container/card ">
               <div>
