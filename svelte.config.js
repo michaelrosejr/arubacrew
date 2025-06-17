@@ -39,7 +39,9 @@ function get_headings() {
       });
     });
 
-    if (!vFile.data.fm) vFile.data.fm = {};
+    if (!vFile.data.fm) {
+      vFile.data.fm = {};
+    }
     vFile.data.fm.headings = vFile.data.headings;
   };
 }
