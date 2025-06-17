@@ -1,5 +1,5 @@
 // import adapter from '@sveltejs/adapter-auto';
-import adapter from "@sveltejs/adapter-static";
+import adapter from "amplify-adapter";
 import relativeImages from "mdsvex-relative-images";
 
 import { join, dirname } from "path";
@@ -98,12 +98,6 @@ const config = {
         if (path === "/src/lib/assets/fonts/inter-roman-latin.Di8DUHzh.woff2") {
           return;
         }
-        if (path === "/") {
-          // if the path is the root, we can ignore it
-          return;
-        }
-        // otherwise fail the build
-        throw new Error(message);
       },
     },
     // adapter-auto only supports some environments, see https://svelte.dev/docs/kit/adapter-auto for a list.
@@ -120,12 +114,6 @@ const config = {
     }),
     alias: {
       "@/*": "./src/lib/*",
-    },
-    paths: {
-      base:
-        process.env.NODE_ENV === "production"
-          ? "/michaelrosejr.github.io/arubacrew"
-          : "",
     },
   },
 };
