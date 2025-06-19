@@ -1,0 +1,133 @@
+/* Custom Callouts Styles */
+.callout {
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
+    border-left: 4px solid;
+    background-color: var(--callout-bg, #f8f9fa);
+    border-color: var(--callout-border, #dee2e6);
+  }
+  
+  .callout-title {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--callout-title-color, #495057);
+  }
+  
+  .callout-icon {
+    margin-right: 8px;
+    font-size: 1.1em;
+  }
+  
+  .callout-content {
+    color: var(--callout-text-color, #6c757d);
+  }
+  
+  .callout-content p:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Callout Types */
+  .callout-note {
+    --callout-bg: #e3f2fd;
+    --callout-border: #2196f3;
+    --callout-title-color: #1976d2;
+    --callout-text-color: #0d47a1;
+  }
+  
+  .callout-tip {
+    --callout-bg: #f3e5f5;
+    --callout-border: #9c27b0;
+    --callout-title-color: #7b1fa2;
+    --callout-text-color: #4a148c;
+  }
+  
+  .callout-info {
+    --callout-bg: #e8f5e8;
+    --callout-border: #4caf50;
+    --callout-title-color: #388e3c;
+    --callout-text-color: #1b5e20;
+  }
+  
+  .callout-warning {
+    --callout-bg: #fff3e0;
+    --callout-border: #ff9800;
+    --callout-title-color: #f57c00;
+    --callout-text-color: #e65100;
+  }
+  
+  .callout-danger,
+  .callout-error {
+    --callout-bg: #ffebee;
+    --callout-border: #f44336;
+    --callout-title-color: #d32f2f;
+    --callout-text-color: #b71c1c;
+  }
+  
+  .callout-success {
+    --callout-bg: #e8f5e8;
+    --callout-border: #4caf50;
+    --callout-title-color: #388e3c;
+    --callout-text-color: #1b5e20;
+  }
+  
+  .callout-question {
+    --callout-bg: #fff8e1;
+    --callout-border: #ffc107;
+    --callout-title-color: #f9a825;
+    --callout-text-color: #f57f17;
+  }
+  
+  .callout-quote {
+    --callout-bg: #fafafa;
+    --callout-border: #616161;
+    --callout-title-color: #424242;
+    --callout-text-color: #212121;
+  }
+  
+  .callout-example {
+    --callout-bg: #f1f8e9;
+    --callout-border: #8bc34a;
+    --callout-title-color: #689f38;
+    --callout-text-color: #33691e;
+  }
+  
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    .callout {
+      --callout-bg: #1e1e1e;
+    }
+    
+    .callout-note {
+      --callout-bg: #0d1b2a;
+      --callout-title-color: #64b5f6;
+      --callout-text-color: #90caf9;
+    }
+    
+    .callout-tip {
+      --callout-bg: #1a0e1a;
+      --callout-title-color: #ba68c8;
+      --callout-text-color: #ce93d8;
+    }
+    
+    .callout-info {
+      --callout-bg: #0f1b0f;
+      --callout-title-color: #81c784;
+      --callout-text-color: #a5d6a7;
+    }
+    
+    .callout-warning {
+      --callout-bg: #1f1611;
+      --callout-title-color: #ffb74d;
+      --callout-text-color: #ffcc02;
+    }
+    
+    .callout-danger,
+    .callout-error {
+      --callout-bg: #1f0f0f;
+      --callout-title-color: #ef5350;
+      --callout-text-color: #e57373;
+    }
+  }

@@ -1,7 +1,7 @@
 ---
 title: Kelly's Classic Beef Chili Recipe
 description: A hearty, flavorful chili that's perfect for cold days and feeding a crowd. This recipe serves 6-8 people and gets better with time!
-date: '2025-06-16'
+date: 2025-06-15
 categories:
   - summer
   - recipe

@@ -19,7 +19,7 @@ async function getPosts() {
       (file.metadata as Record<string, any>).folder = folder;
       const metadata = file.metadata as Omit<Post, "slug">;
 
-      const post: Post = {
+      let post: Post = {
         ...metadata,
         slug,
         folder,
@@ -29,6 +29,10 @@ async function getPosts() {
         categories: metadata.categories || [],
         published: metadata.published || false,
       };
+
+      // Hide Templates folder from listings.
+      posts = posts.filter((post) => post.folder !== "Templates");
+
       post.published && posts.push(post);
     }
   }

@@ -18,11 +18,19 @@ export type WithElementRef<T, U extends HTMLElement = HTMLElement> = T & {
 
 type DateStyle = Intl.DateTimeFormatOptions["dateStyle"];
 
-export function formatDate(
-  date: string,
-  dateStyle: DateStyle = "medium",
-  locales = "en"
-) {
-  const formatter = new Intl.DateTimeFormat(locales, { dateStyle });
-  return formatter.format(new Date(date));
+export function formatDate(date: string) {
+  const nDate = new Date(date);
+  return nDate.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
 }
+// export function formatDate(
+//   date: string,
+//   dateStyle: DateStyle = "medium",
+//   locales = "en"
+// ) {
+//   const formatter = new Intl.DateTimeFormat(locales, { dateStyle });
+//   return formatter.format(new Date(date));
+// }

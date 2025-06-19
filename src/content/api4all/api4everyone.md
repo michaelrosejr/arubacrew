@@ -1,7 +1,7 @@
 ---
 title: APIs for Everyone Workshop
 description: Learning the basics of API using Aruba New Central
-date: '2025-06-17'
+date: 2025-06-16
 categories:
   - central
   - automation
@@ -26,11 +26,11 @@ If you get the following error when making an API request:
 ```
 
 There are a few scenarios where you'll get this error:
-1) This error generally means the access token you're using has expired. If this the case, then you need to request a new access token.
-2) You're using the wrong access token for the wrong Central cluster. 
+1. This error generally means the access token you're using has expired. If this the case, then you need to request a new access token.
+2. You're using the wrong access token for the wrong Central cluster. 
 	- You need to change the correct Environment settings for the ClientID you're using
 	- Request a new access token
-3) Your Personal API token has been deleted or revoked. 
+3. Your Personal API token has been deleted or revoked. 
 	- You'll need to create a new Personal API token
 	- Enter the new ClientId and ClientSecret in the Environments section
 	- Request a new access token
@@ -78,7 +78,7 @@ Once you have the desktop version installed, download the<mark style="background
 ## Lab 3: Requesting an API key
 
 ### Configuring the environment variables
-![[Pasted image 20250605140601.png]]
+![Pasted image 20250605140601.png](./attachments/Pasted%20image%2020250605140601.png)
 
 In Postman, navigate to the Environments tab on the left.
 - Enter your client_id and client_secret in the value fields. 
@@ -134,6 +134,11 @@ Here you see a JSON object with an items list of sites.
 Congratulations! You've just sent your first API GET request.
 
 ## Lab 5: Configuring a VLAN
+
+Test image.
+![](Pasted%20image%2020250618134814.png)
+
+
 ## Lab 6: Configuring a SSID
 ## Lab 7: Auto-refreshing your GLP access token
 

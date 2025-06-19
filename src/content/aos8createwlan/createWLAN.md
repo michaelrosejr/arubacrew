@@ -154,4 +154,5 @@ published: true
 
 ---
 
-*Note: Interface details may vary slightly depending on your Aruba Instant firmware version. Always refer to the latest Aruba documentation for version-specific instructions.*
+> [!Note]
+> Interface details may vary slightly depending on your Aruba Instant firmware version. Always refer to the latest Aruba documentation for version-specific instructions.*
