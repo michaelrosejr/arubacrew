@@ -4,6 +4,8 @@
   import HPElogo from "$lib/assets/HPE_NewElement.png";
   import { formatDate } from "$lib/utils";
   import AccountDropDown from "./AccountDropDown.svelte";
+  import DownloadPDF from "$lib/components/custom/DownloadPDF.svelte";
+  import svg from "$lib/components/custom/svg.svelte";
   let {
     data,
   }: {
@@ -36,7 +38,6 @@
          prose-h3:dark:text-white
          prose-h2:dark:text-white
          prose-p:dark:text-white
-         prose-a:dark:text-blue-300
          prose-strong:dark:text-yellow-300
          prose-code:dark:text-shadow-orange-400
          prose-img:dark:text-white
@@ -44,15 +45,21 @@
          prose-li:dark:text-white
          prose-code:dark:text-white
          prose-pre:dark:text-white
-         prose-blockquote:dark:text-white"
+         prose-blockquote:dark:text-white
+         prose-a:dark:text-blue-300
+         prose-a:text-blue-600
+         prose-a:hover:text-hpe
+         prose-a:hover:dark:text-hpe
+         "
       >
         <hgroup>
-          <div class=" text-black dark:text-white text-4xl font-semibold">
+          <div class="-mt-10 text-black dark:text-white text-4xl font-semibold">
             {data.meta.title}
           </div>
           <div class="my-2 text-gray-500">
             Published at {formatDate(data.meta.date)}
           </div>
+          <div><DownloadPDF /></div>
         </hgroup>
 
         <div class="tags">
@@ -72,7 +79,7 @@
   </main>
 </Sidebar.Provider>
 
-<style>
+<!-- <style>
   :global(.callout) {
     border-radius: 5px;
     background-color: #e9f1fc;
@@ -92,5 +99,10 @@
   }
   :global(.callout-title-text) {
     margin-left: 5px;
+  }
+</style> -->
+<style>
+  :global(.callout) {
+    mix-blend-mode: darken;
   }
 </style>

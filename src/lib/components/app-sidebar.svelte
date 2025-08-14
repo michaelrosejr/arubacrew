@@ -18,7 +18,7 @@
           : ""}
       >
         <Sidebar.MenuButton
-          class="flex h-12  {page.url.hash === `#${heading.sectionId}`
+          class="flex h-full  {page.url.hash === `#${heading.sectionId}`
             ? 'bg-hpe py-1 hover:bg-hpe focus:bg-hpe active:bg-hpe dark:text-white'
             : ''}"
         >
@@ -29,7 +29,7 @@
             class:is-active={page.url.hash === `#${heading.sectionId}`}
             href={`#${heading.sectionId}`}
           >
-            <div class="mr-1 items-center justify-center">
+            <div class="flex flex-row mr-1 items-center justify-center">
               <Icon
                 class={page.url.hash === `#${heading.sectionId}`
                   ? "text-white dark:text-black"
@@ -38,7 +38,7 @@
                 style="font-size: 12px;"
               />
             </div>
-            <div class="text-xs dark:text-white">{heading.title}</div></a
+            <div class="text-sm dark:text-white">{heading.title}</div></a
           >
         </Sidebar.MenuButton>
       </div>
@@ -47,11 +47,11 @@
 {/snippet}
 
 <Sidebar.Root>
-  <Sidebar.Header class="rounded-none  m-0 p-0 h-auto bg-black">
+  <!-- <Sidebar.Header class="rounded-none  m-0 p-0 h-auto bg-black">
     <div class="flex items-center justify-center h-full">
       <img alt="HPELogo" src={HPElogo} class="p-2" width="50%" />
     </div>
-  </Sidebar.Header>
+  </Sidebar.Header> -->
   <Sidebar.Content>
     <Sidebar.Group />
     <Sidebar.GroupLabel></Sidebar.GroupLabel>
@@ -69,7 +69,7 @@
                   style="font-size: 16px;"
                 />
               </div>
-              <div class="text-xs dark:text-white">Home</div></a
+              <div class="text-sm dark:text-white">Home</div></a
             ></Sidebar.MenuButton
           ></Sidebar.MenuItem
         >

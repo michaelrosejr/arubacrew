@@ -7,14 +7,15 @@ import rehypeSlug from "rehype-slug";
 import rehypeExternalLinks from "rehype-external-links";
 // import relativeImages from "mdsvex-relative-images";
 import fixObiImagePaths from "./js/fixObiImagePaths.js"; // Custom relative image plugin
-import { preprocessObsidianImages } from "./js/remarkObsidianImages.js"; // Convert Obsidian syntax
+// import { preprocessObsidianImages } from "./js/remarkObsidianImages.js"; // Convert Obsidian syntax
+import customBlockquotes from "./js/customBlockquotes.js";
 
 import remarkParse from "remark-parse";
 import callouts from "rehype-callouts";
 // import RemarkFlexibleToc from "remark-flexible-toc";
 
 import { fileURLToPath } from "url";
-import { join, dirname } from "path";
+import { join, dirname, relative } from "path";
 import relativeImages from "mdsvex-relative-images";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -65,7 +66,15 @@ const config = defineConfig({
     highlighter: async (code, lang = "text") => {
       const highlighter = await createHighlighter({
         themes: ["poimandres"],
-        langs: ["javascript", "typescript"],
+        langs: [
+          "javascript",
+          "typescript",
+          "json",
+          "python",
+          "bash",
+          "yaml",
+          "shell",
+        ],
       });
       await highlighter.loadLanguage("javascript", "typescript");
       const html = escapeSvelte(
@@ -77,6 +86,8 @@ const config = defineConfig({
   //   remarkPlugins: [gfm, [remarkFlexibleToc, { tocRef: toc }]],
   remarkPlugins: [get_headings, fixObiImagePaths, relativeImages],
   rehypePlugins: [rehypeSlug, callouts],
+
+  // rehypePlugins: [rehypeSlug],
 });
 
 export default config;

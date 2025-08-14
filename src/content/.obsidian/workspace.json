@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "aos8createwlan/createWLAN.md",
+                "file": "api4all/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "createWLAN"
+              "title": "index"
             }
           }
         ]
@@ -78,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 412.5
+    "width": 232.5
   },
   "right": {
     "id": "5f6f1c59c5a8f17f",
@@ -170,19 +170,35 @@
   },
   "active": "de7451a1f902a7fa",
   "lastOpenFiles": [
-    "api4all/api4everyone.md",
-    "vxlan101/vxlanworkshop.md",
+    "api4all/attachments/Pasted image 20250814054151.png",
+    "api4all/attachments/Pasted image 20250813145724.png",
+    "api4all/attachments/Pasted image 20250813145648.png",
+    "api4all/attachments/map_vlan.png",
+    "api4all/attachments/validate_vlan5.png",
+    "api4all/attachments/VLAN_ScopeID.png",
+    "api4all/attachments/APIid_secret.png",
+    "api4all/attachments/APIClientService.png",
+    "api4all/attachments/CreatePersonalAPI.png",
+    "api4all/attachments/ManageWorkspace.png",
+    "aos8createwlan/index.md",
+    "makefriedchicken/index.md",
     "vxlan101/attachments/Pasted image 20250618150634.png",
-    "vxlan101/attachments",
-    "makefriedchicken/cookchicken.md",
-    "chili_recipe/recipe.md",
-    "vxlan101/test.md",
+    "Download teams sharepoint stream videos.md",
+    "UCLA White Glove.md",
+    "UCLA Overview.md",
+    "Deloitte Discover Session.md",
+    "Deloitte Discover meeting.md",
+    "ffmpeg.md",
+    "Untitled",
+    "attachments",
+    "api4all/index.md",
+    "vxlan101/index.md",
+    "chili_recipe/index.md",
     "Templates/New Lab Guide.md",
+    "vxlan101/attachments",
+    "vxlan101/test.md",
     "vxlan101",
     "api4all/Untitled.md",
-    "Templates",
-    "api4all/attachments/Pasted image 20250618134814.png",
-    "api4all/Pasted image 20250618134732.png",
-    "Pasted image 20250618134643.png"
+    "Templates"
   ]
 }

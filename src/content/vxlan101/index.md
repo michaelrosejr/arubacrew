@@ -11,4 +11,10 @@ published: true
 
 Here's a picture.
 
-![testImage](Pasted%20image%2020250618150634.png)
+![200](Pasted%20image%2020250618150634.png)
+
+
+| ID  | Name         | City      |
+| --- | ------------ | --------- |
+| 1   | Michael Rose | Seattle   |
+| 2   | Ethan Rose   | Sammamish |
