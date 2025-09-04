@@ -11,7 +11,8 @@ published: true
 ## Introduction
 The goal of this workshop is to provide you, the SE, with hands-on experience in getting started with RESTful API that are used in all of our products. This includes creating an API token, configuring your Postman client, creating your first API request, configuring and updating configurations in Aruba Central.
 
-[Glossary of Terms](glossary)
+## Reminder
+While this lab describes the API endpoints used in this workshop. We recommend reviewing the API docs on [DevHub](https://devhub.arubanetworks.com/get-started/new-central) for more details on each API endpoint.
 
 ## Assumptions
 This lab assumes you're familiar with New Central and configuration. While you can go through this lab without knowledge of New Central, it will be easier to understand the UI if you've already configured devices and SSIDs using New Central.
@@ -20,7 +21,8 @@ This lab assumes you're familiar with New Central and configuration. While you c
 
 > [!Note]
 If you get the following error when making an API request:
-```
+```json 
+
 {
    "errorCode": "HPE_GL_NETWORKING_ERROR_UNAUTHORIZED",
    "httpStatusCode": 401,
@@ -126,7 +128,7 @@ Once you have the desktop version installed, download the [APIs for Everyone Wor
 ### Configuring the environment variables
 ![Pasted image 20250605140601.png](./attachments/Pasted%20image%2020250605140601.png)
 
-In Postman, navigate to the Environments tab on the left.
+In Postman, navigate to the **Environments** tab on the left.
 - Enter your client_id and client_secret in the value fields. 
 - For each variable, be sure to the `Current value` is either blank or the same as Initial Value.
 - Validate the baseUrl is set to: `https://internal.api.central.arubanetworks.com`
@@ -156,6 +158,19 @@ Click **Send** to send the API request
 
 If everything was configured correctly, you should see an access token in the Body of the response in Postman.  This access token has been saved as an environment variable in Workshop.
 
+> [!Important]
+If you receive an error that you have an invalid access token as show below, then you most likely need to refresh your token. Re-send the **Generate Access Token** in the previous lab to generate a new access token.
+
+```json
+{
+   "errorCode": "HPE_GL_NETWORKING_ERROR_UNAUTHORIZED",
+   "httpStatusCode": 401,
+   "message": "Invalid access token",
+   "debugId": "d3b9a0166c2b8a5890823dcf3f931978"
+}
+```
+
+
 🎉 Congratulations! You have completed your first API call using Postman.
 
 ### Troubleshooting
@@ -166,6 +181,9 @@ If you ran into an error, check the following:
 
 ## Lab 4: Configuring your first GET request
 
+This workshop assume the site is already created regardless if you're using a Central instance provided by the CREW team or your own environment. We highly recommend you use an existing site that has APs already configured as it will be much easier to validate the changes you make and for testing. However, due to hardware limitation the CREW central environment does not include hardware. In the CREW central instances; validation can only be done via the API and UI.
+
+### Request a list of `sites`
 ![GETREQ](./attachments/Pasted%20image%2020250605163359.png)
 
 The first GET request we're going to make is to get a list of sites in Central. 
@@ -213,21 +231,14 @@ Be sure to change the `<scope_id>` and `<vlan_id` below to match your configurat
 ```json
 
 {
+	"scope-map": [
+		{
+		"scope-name": "<scope_id>",
+		"persona": "CAMPUS_AP",
+		"resource": "layer2-vlan/<vlan_id>"
+		}
 
-"scope-map": [
-
-{
-
-"scope-name": "<scope_id>",
-
-"persona": "CAMPUS_AP",
-
-"resource": "layer2-vlan/<vlan_id>"
-
-}
-
-]
-
+	]
 }
 
 ```
@@ -267,7 +278,7 @@ Paste the below JSON. Remember to edit the `<your_ssid_name>` and wpa_password v
 
 ```json
 {
-  "wlan_ssid": {
+  "wlan-ssid": {
     "essid": "<your_ssid_name>",
     "type": "employee",
     "hide_ssid": false,
@@ -292,6 +303,9 @@ Paste the below JSON. Remember to edit the `<your_ssid_name>` and wpa_password v
 ##### Validate the WLAN SSID has been created.
 ![](Pasted%20image%2020250814054151.png)
 
+
+
+
 ## Lab 7: Auto-refreshing your GLP access token
 
 ## Internal Resources
@@ -303,4 +317,61 @@ Paste the below JSON. Remember to edit the `<your_ssid_name>` and wpa_password v
 - Python SDK: [pycentral ](https://developer.arubanetworks.com/new-central/docs/getting-started-with-python)
 	- At the time of this writing, the Python SDK `pycentral`  is not available for New Central
 
+
+## Extra Credit
+The Postman collection includes a folder of GLP endpoints. To use these endpoints, you'll need to create a GLP API token. 
+
+![](Pasted%20image%2020250826153551.png)
+
+## Creating a GLP API Token
+
+In Lab 1 we created a personal API client for Aruba Central. For this next section we'll create a personal API client for**HPE GreenLake Cloud Platform**.
+
+
+1. Login to HPE GreenLake using the credentials provided by your instructor or use your own workspace.
+2. On the HPE GreenLake header, click the workspace menu and then select **Manage Workspace**.
+3. Select **Personal API clients**.
+4. Click **Create personal API client**.
+5. In **Personal API client name**, enter a name for the API client.
+6. Select the **HPE GreenLake Cloud Platform as the **Service**.
+7. Click the **Create personal API client** button to continue. The **Personal API client created** display appears and shows that your credentials were successfully created.
+8. Click the **Copy** button next to **Client ID** and **Client Secret** and save both to a safe and secure location. HPE GreenLake does not store your client secret. If lost, you need to reset your client secret.
+9. Click **Close** to continue. You are returned to the main **Personal API clients** page, where you can generate the access token.
+
+![](Pasted%20image%2020250814073841.png)
+
+**Save the `client_id` and `client_secret` as we'll use it in the next section**
+
+In Postman, go to:
+Environments > Workshop and enter the `client_id` and `client_secret` from the previous section.
+
+![](Pasted%20image%2020250814074135.png)
+
+Then go to
+
+**Collections > GLP > Authentication > Generate GLP Token**
+
+Click Send and you should receive a access_token for GLP
+
+![](Pasted%20image%2020250814074350.png)
+
+## Getting a list of Devices in GLP
+
+Go to **Collections > GLP > Devices > List Devices**
+
+Click on this request will show a list of devices in GLP. This will show devices for Central as well as Compute, Storage and other HPE products managed by GreenLake.
+
+![](Pasted%20image%2020250814074734.png)
+
+Go to **Collections > GLP > Devices > List Subscriptions**
+
+As the name states, this will show a list of subscriptions. Refer to DevHub.arubanetworks.com for more API endpoints to manage subscriptions.
+
+![](Pasted%20image%2020250814074808.png)
+
+
+
+## Reference
+[DevHub API Docs](https://devhub.arubanetworks.com/get-started/new-central)
+[Glossary of Terms](glossary)
 
