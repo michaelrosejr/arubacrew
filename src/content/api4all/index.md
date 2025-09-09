@@ -23,15 +23,19 @@ This lab guide assume a New Central `Site` has already been created. The `Site` 
 
 > [!Note]
 If you get the following error when making an API request:
+
+
 ``` 
 
 {
-   "errorCode": "HPE_GL_NETWORKING_ERROR_UNAUTHORIZED",
-   "httpStatusCode": 401,
-   "message": "Invalid access token",
-   "debugId": "d3b9a0166c2b8a5890823dcf3f931978"
+   errorCode: HPE_GL_NETWORKING_ERROR_UNAUTHORIZED,
+   httpStatusCode: 401,
+   message: Invalid access token,
+   debugId: d3b9a0166c2b8a5890823dcf3f931978
 }
+
 ```
+
 
 There are a few scenarios where you'll get this error:
 1. This error generally means the access token you're using has expired. 
