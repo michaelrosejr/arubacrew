@@ -1,7 +1,7 @@
 ---
 title: APIs for Everyone Workshop
 description: Learning the basics of API using Aruba New Central
-date: 2025-06-16
+date: 2025-09-08
 categories:
   - central
   - automation
@@ -373,15 +373,6 @@ Go to **Collections > GLP > Devices > List Subscriptions**
 As the name states, this will show a list of subscriptions. Refer to DevHub.arubanetworks.com for more API endpoints to manage subscriptions.
 
 ![](Pasted%20image%2020250814074808.png)
-
-## Internal Resources
-- New Central [API Reference (Swagger)](https://developer.arubanetworks.com/new-central/reference)
-- Slack Channel: [#aruba-developer-community](https://hpe.enterprise.slack.com/archives/C0257JY7VFY)
-- DevHub: 
-	- [New Central APIs](https://devhub.arubanetworks.com/get-started/new-central) 
-	- [Postman Collection](https://developer.arubanetworks.com/new-central/docs/postman-collection)
-- Python SDK: [pycentral ](https://developer.arubanetworks.com/new-central/docs/getting-started-with-python)
-	- At the time of this writing, the Python SDK `pycentral`  is not available for New Central
 
 
 
