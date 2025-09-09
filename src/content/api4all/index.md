@@ -23,7 +23,7 @@ This lab guide assume a New Central `Site` has already been created. The `Site` 
 
 > [!Note]
 If you get the following error when making an API request:
-```json 
+``` 
 
 {
    "errorCode": "HPE_GL_NETWORKING_ERROR_UNAUTHORIZED",
