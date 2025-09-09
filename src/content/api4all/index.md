@@ -17,6 +17,8 @@ While this lab describes the API endpoints used in this workshop. We recommend r
 ## Assumptions
 This lab assumes you're familiar with New Central and configuration. While you can go through this lab without knowledge of New Central, it will be easier to understand the UI if you've already configured devices and SSIDs using New Central.
 
+This lab guide assume a New Central `Site` has already been created. The `Site` **MUST** be created as a New Central Site. Classic Central sites are not supported with New Central APIs.
+
 ## Caveats
 
 > [!Note]
@@ -211,7 +213,7 @@ To get a list of VLANs available in the library, click
 **VLANs** > **List VLANs in Library** > **Send**
 
 
-![](Pasted%20image%2020250619151803.png)
+![](Pasted%20image%2020250908160503.png)
 
 Postman will return a list of VLANs in your library.
 
@@ -220,11 +222,14 @@ To create a new VLAN, Click:
 
 **VLANs** > **Create VLAN in Library** > **Body**
 
-![](Pasted%20image%2020250619152314.png)
-
+![](Pasted%20image%2020250908160929.png)
 Edit JSON and change the "VLAN" id to **5**
 
-Now we need to map this VLAN to the site Mercury. To do this, we will set the `scope_id` to the `id` of the Mercury site that we saved in the previous section.
+Click Send to send the API POST request.
+
+This will create the VLAN in the Library.
+
+Now we need to map this VLAN to the site of your choice. To do this, we will set the `scope_id` to the `id` of the Mercury site that we saved in the previous section.
 
 Be sure to change the `<scope_id>` and `<vlan_id` below to match your configuration
 
@@ -258,9 +263,8 @@ After you have mapped the VLAN, it should look similar to this:
 ![Mapped_VLAN_2_site](Pasted%20image%2020250813145724.png)
 
 
-## Lab 6: Create a WLAN SSID
-
-### Create the WLAN SSID Request
+## Lab 6: Create the WLAN Request
+In this lab we'll create a WLAN SSID at the site level.
 
 In Postman go to the following tab:
 
@@ -268,54 +272,55 @@ In Postman go to the following tab:
 
 Click send should return a list of WLANs, which may be `None` or `{}`
 
-Click on the `Crew WLAN` request, then `Params`.
+Click on the `Create WLAN` request, then `Params`.
 
 Change the `scope_id` to your site`id` from above.
 
 
-
-Paste the below JSON. Remember to edit the `<your_ssid_name>` and wpa_password value.
-
-```json
-{
-  "wlan-ssid": {
-    "essid": "<your_ssid_name>",
-    "type": "employee",
-    "hide_ssid": false,
-    "vlan": "",
-    "zone": "",
-    "opmode": {
-      "name": "wpa2-psk-mixed"
-    },
-    "wpa_passphrase": "YourSecurePassword123!",
-    "wpa_passphrase_changed": true,
-    "is_locked": false,
-    "captive_profile_name": "",
-    "bandwidth_limit_up": "",
-    "bandwidth_limit_down": "",
-    "bandwidth_limit_peruser_up": "",
-    "bandwidth_limit_peruser_down": "",
-    "access_rules": []
-  }
-}
-```
+Go to the Body tab first, and edit the JSON. The `essid name` is **Workshop**. The `wpa-passphrase` is **Welcome123%**
 
 ##### Validate the WLAN SSID has been created.
 ![](Pasted%20image%2020250814054151.png)
+![](Pasted%20image%2020250908163222.png)
 
+Click Send to POST the request to Central to create the WLAN in the Library.
 
+Once the WLAN has been created, we then need to map the WLAN to the site just as we did with the VLAN.
 
+Remember to change the scope-name ID to the Scope ID of the site you want to map this WLAN to in Central.
+
+![](Pasted%20image%2020250908163511.png)
+
+Once complete, verify that the WLAN has been created in Central via the Web UI.
+
+![](Pasted%20image%2020250908164317.png)
+
+If you have an Access Point included in this site, then you can use the Monitoring API to verify the WLAN is broadcasting.
+
+![](Pasted%20image%2020250908165410.png)
 
 ## Lab 7: Auto-refreshing your GLP access token
 
-## Internal Resources
-- New Central [API Reference (Swagger)](https://developer.arubanetworks.com/new-central/reference)
-- Slack Channel: [#aruba-developer-community](https://hpe.enterprise.slack.com/archives/C0257JY7VFY)
-- DevHub: 
-	- [New Central APIs](https://devhub.arubanetworks.com/get-started/new-central) 
-	- [Postman Collection](https://developer.arubanetworks.com/new-central/docs/postman-collection)
-- Python SDK: [pycentral ](https://developer.arubanetworks.com/new-central/docs/getting-started-with-python)
-	- At the time of this writing, the Python SDK `pycentral`  is not available for New Central
+Postman offers an "Auto-refresh access token" feature for OAuth 2.0 authentication that GLP uses for token generation, designed to automatically refresh expired access tokens before sending requests. 
+
+Access Token URL: 
+```
+
+https://sso.common.cloud.hpe.com/as/token.oauth2
+
+```
+
+Go to root of the Postman Collection called APIs for Everyone. Then click on Auth tab.
+
+Complete the fields per the screenshot below. The access token URL is located above.
+
+
+![](Pasted%20image%2020250908170720.png)
+
+Once the fields have been completed, click Get New Access Token.
+
+
+🎉 Congratulations! You have completed this portion of the lab!
 
 
 ## Extra Credit
@@ -368,6 +373,15 @@ Go to **Collections > GLP > Devices > List Subscriptions**
 As the name states, this will show a list of subscriptions. Refer to DevHub.arubanetworks.com for more API endpoints to manage subscriptions.
 
 ![](Pasted%20image%2020250814074808.png)
+
+## Internal Resources
+- New Central [API Reference (Swagger)](https://developer.arubanetworks.com/new-central/reference)
+- Slack Channel: [#aruba-developer-community](https://hpe.enterprise.slack.com/archives/C0257JY7VFY)
+- DevHub: 
+	- [New Central APIs](https://devhub.arubanetworks.com/get-started/new-central) 
+	- [Postman Collection](https://developer.arubanetworks.com/new-central/docs/postman-collection)
+- Python SDK: [pycentral ](https://developer.arubanetworks.com/new-central/docs/getting-started-with-python)
+	- At the time of this writing, the Python SDK `pycentral`  is not available for New Central
 
 
 
