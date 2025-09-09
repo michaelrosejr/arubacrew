@@ -97,17 +97,17 @@ You'll see a section for your credentials. You can enter your Client ID and Secr
 > For security reasons, DevHub won't remember your credentials, so it's recommended you keep this information close by to re-enter the info again as your web session or access token expires.
 
 
-![](Pasted%20image%2020250620110427.png)
+![](Pasted_image_20250620110427.png)
 
 Next, we'll be using the Internal Central cluster. Select `https://internal.api.central.arubanetworks.com` from the Base URL dropdown menu. Don't click on the above link as it is meant for API calls with parameters.
 
 > [!Note]
-> ![](Pasted%20image%2020250620110412.png)
+> ![](Pasted_image_20250620110412.png)
 > If you get the above error, then you need to go back to the GLP page and generate a new access token. The other option is to save your Client ID and Secret and click "Authorize" to generate a new one.
 
 If you don't get an error and everything works correctly, you should get a response that looks similar to this screenshot.
 
-![](Pasted%20image%2020250620110352.png)
+![](Pasted_image_20250620110352.png)
 
 
 ## Lab 2: Overview of Postman
@@ -128,7 +128,7 @@ Once you have the desktop version installed, download the [APIs for Everyone Wor
 ## Lab 3: Requesting an API key
 
 ### Configuring the environment variables
-![Pasted image 20250605140601.png](./attachments/Pasted%20image%2020250605140601.png)
+![Pasted image 20250605140601.png](./attachments/Pasted_image_20250605140601.png)
 
 In Postman, navigate to the **Environments** tab on the left.
 - Enter your client_id and client_secret in the value fields. 
@@ -137,26 +137,26 @@ In Postman, navigate to the **Environments** tab on the left.
 - The `glp_token` variable, should be blank as it will be auto populated by Postman in the next section. Remove any data that is currently in the Current Value field for the `glp_token` variable.
 
 ### Set the environment 
-![SetEnv](./attachments/Pasted%20image%2020250605141119.png)
+![SetEnv](./attachments/Pasted_image_20250605141119.png)
 
 Once you have your variables set, select the Workshop environment from the drop on top right which may say `No environment`. This will tell Postman to use these environment variables for all your API requests.
 
 ### Getting your first API key
 
-![A local image](./attachments/Pasted%20image%2020250605141837.png)
+![A local image](./attachments/Pasted_image_20250605141837.png)
 
 Navigate to the **Generate Access Token** API request.
 
 **Collections** > **APIs for Everyone** > **Authentication** > **Generate Access Token**
 
 
-![authtoken1](./attachments/Pasted%20image%2020250605141816.png)
+![authtoken1](./attachments/Pasted_image_20250605141816.png)
 
 You'll see under the Body of the request that the client_id and client_secret are calling the variables respectively. 
 
 Click **Send** to send the API request
 
-![SendReq](./attachments/Pasted%20image%2020250605142006.png)
+![SendReq](./attachments/Pasted_image_20250605142006.png)
 
 If everything was configured correctly, you should see an access token in the Body of the response in Postman.  This access token has been saved as an environment variable in Workshop.
 
@@ -186,7 +186,7 @@ If you ran into an error, check the following:
 This workshop assume the site is already created regardless if you're using a Central instance provided by the CREW team or your own environment. We highly recommend you use an existing site that has APs already configured as it will be much easier to validate the changes you make and for testing. However, due to hardware limitation the CREW central environment does not include hardware. In the CREW central instances; validation can only be done via the API and UI.
 
 ### Request a list of `sites`
-![GETREQ](./attachments/Pasted%20image%2020250605163359.png)
+![GETREQ](./attachments/Pasted_image_20250605163359.png)
 
 The first GET request we're going to make is to get a list of sites in Central. 
 Find the Sites folder and select List Sites. Note that the request type is <mark style="background: #BBFABBA6;">GET</mark> with the `baseUrl` variable used from the Environments section. 
@@ -194,7 +194,7 @@ Find the Sites folder and select List Sites. Note that the request type is <mark
 Click **SEND** and to execute the API GET request.
 
 You should get a response similar to the following:
-![similar](./attachments/Pasted%20image%2020250605165908.png)
+![similar](./attachments/Pasted_image_20250605165908.png)
 
 Here you see a JSON object with an items list of sites.
 
@@ -213,7 +213,7 @@ To get a list of VLANs available in the library, click
 **VLANs** > **List VLANs in Library** > **Send**
 
 
-![](Pasted%20image%2020250908160503.png)
+![](Pasted_image_20250908160503.png)
 
 Postman will return a list of VLANs in your library.
 
@@ -222,7 +222,7 @@ To create a new VLAN, Click:
 
 **VLANs** > **Create VLAN in Library** > **Body**
 
-![](Pasted%20image%2020250908160929.png)
+![](Pasted_image_20250908160929.png)
 Edit JSON and change the "VLAN" id to **5**
 
 Click Send to send the API POST request.
@@ -260,7 +260,7 @@ If you DID NOT set the `scope_id` to the site in the last exercise, then you'll 
 ![](validate_vlan5.png)
 
 After you have mapped the VLAN, it should look similar to this:
-![Mapped_VLAN_2_site](Pasted%20image%2020250813145724.png)
+![Mapped_VLAN_2_site](Pasted_image_20250813145724.png)
 
 
 ## Lab 6: Create the WLAN Request
@@ -280,8 +280,8 @@ Change the `scope_id` to your site`id` from above.
 Go to the Body tab first, and edit the JSON. The `essid name` is **Workshop**. The `wpa-passphrase` is **Welcome123%**
 
 ##### Validate the WLAN SSID has been created.
-![](Pasted%20image%2020250814054151.png)
-![](Pasted%20image%2020250908163222.png)
+![](Pasted_image_20250814054151.png)
+![](Pasted_image_20250908163222.png)
 
 Click Send to POST the request to Central to create the WLAN in the Library.
 
@@ -289,15 +289,15 @@ Once the WLAN has been created, we then need to map the WLAN to the site just as
 
 Remember to change the scope-name ID to the Scope ID of the site you want to map this WLAN to in Central.
 
-![](Pasted%20image%2020250908163511.png)
+![](Pasted_image_20250908163511.png)
 
 Once complete, verify that the WLAN has been created in Central via the Web UI.
 
-![](Pasted%20image%2020250908164317.png)
+![](Pasted_image_20250908164317.png)
 
 If you have an Access Point included in this site, then you can use the Monitoring API to verify the WLAN is broadcasting.
 
-![](Pasted%20image%2020250908165410.png)
+![](Pasted_image_20250908165410.png)
 
 ## Lab 7: Auto-refreshing your GLP access token
 
@@ -315,7 +315,7 @@ Go to root of the Postman Collection called APIs for Everyone. Then click on Aut
 Complete the fields per the screenshot below. The access token URL is located above.
 
 
-![](Pasted%20image%2020250908170720.png)
+![](Pasted_image_20250908170720.png)
 
 Once the fields have been completed, click Get New Access Token.
 
@@ -326,7 +326,7 @@ Once the fields have been completed, click Get New Access Token.
 ## Extra Credit
 The Postman collection includes a folder of GLP endpoints. To use these endpoints, you'll need to create a GLP API token. 
 
-![](Pasted%20image%2020250826153551.png)
+![](Pasted_image_20250826153551.png)
 
 ## Creating a GLP API Token
 
@@ -343,14 +343,14 @@ In Lab 1 we created a personal API client for Aruba Central. For this next secti
 8. Click the **Copy** button next to **Client ID** and **Client Secret** and save both to a safe and secure location. HPE GreenLake does not store your client secret. If lost, you need to reset your client secret.
 9. Click **Close** to continue. You are returned to the main **Personal API clients** page, where you can generate the access token.
 
-![](Pasted%20image%2020250814073841.png)
+![](Pasted_image_20250814073841.png)
 
 **Save the `client_id` and `client_secret` as we'll use it in the next section**
 
 In Postman, go to:
 Environments > Workshop and enter the `client_id` and `client_secret` from the previous section.
 
-![](Pasted%20image%2020250814074135.png)
+![](Pasted_image_20250814074135.png)
 
 Then go to
 
@@ -358,7 +358,7 @@ Then go to
 
 Click Send and you should receive a access_token for GLP
 
-![](Pasted%20image%2020250814074350.png)
+![](Pasted_image_20250814074350.png)
 
 ## Getting a list of Devices in GLP
 
@@ -366,17 +366,16 @@ Go to **Collections > GLP > Devices > List Devices**
 
 Click on this request will show a list of devices in GLP. This will show devices for Central as well as Compute, Storage and other HPE products managed by GreenLake.
 
-![](Pasted%20image%2020250814074734.png)
+![](Pasted_image_20250814074734.png)
 
 Go to **Collections > GLP > Devices > List Subscriptions**
 
 As the name states, this will show a list of subscriptions. Refer to DevHub.arubanetworks.com for more API endpoints to manage subscriptions.
 
-![](Pasted%20image%2020250814074808.png)
+![](Pasted_image_20250814074808.png)
 
 
 
 ## Reference
 [DevHub API Docs](https://devhub.arubanetworks.com/get-started/new-central)
 [Glossary of Terms](glossary)
-

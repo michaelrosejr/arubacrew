@@ -1,174 +1,211 @@
 {
-    "main": {
-        "id": "0116570bb383d5ba",
-        "type": "split",
+  "main": {
+    "id": "0116570bb383d5ba",
+    "type": "split",
+    "children": [
+      {
+        "id": "132ef62e7ba78e9f",
+        "type": "tabs",
         "children": [
-            {
-                "id": "132ef62e7ba78e9f",
-                "type": "tabs",
-                "children": [
-                    {
-                        "id": "de7451a1f902a7fa",
-                        "type": "leaf",
-                        "state": {
-                            "type": "markdown",
-                            "state": {
-                                "file": "api4all/index.md",
-                                "mode": "source",
-                                "source": false
-                            },
-                            "icon": "lucide-file",
-                            "title": "index"
-                        }
-                    }
-                ]
+          {
+            "id": "de7451a1f902a7fa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "api4all/index.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "index"
             }
-        ],
-        "direction": "vertical"
-    },
-    "left": {
-        "id": "235f03547dbbc835",
-        "type": "split",
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "235f03547dbbc835",
+    "type": "split",
+    "children": [
+      {
+        "id": "aadfe2ffacffb334",
+        "type": "tabs",
         "children": [
-            {
-                "id": "aadfe2ffacffb334",
-                "type": "tabs",
-                "children": [
-                    {
-                        "id": "429459542a7a3855",
-                        "type": "leaf",
-                        "state": {
-                            "type": "file-explorer",
-                            "state": {
-                                "sortOrder": "alphabetical",
-                                "autoReveal": false
-                            },
-                            "icon": "lucide-folder-closed",
-                            "title": "Files"
-                        }
-                    },
-                    {
-                        "id": "19654c41ae320b64",
-                        "type": "leaf",
-                        "state": {
-                            "type": "search",
-                            "state": {
-                                "query": "",
-                                "matchingCase": false,
-                                "explainSearch": false,
-                                "collapseAll": false,
-                                "extraContext": false,
-                                "sortOrder": "alphabetical"
-                            },
-                            "icon": "lucide-search",
-                            "title": "Search"
-                        }
-                    },
-                    {
-                        "id": "13d9bc7ae0b12fec",
-                        "type": "leaf",
-                        "state": {
-                            "type": "bookmarks",
-                            "state": {},
-                            "icon": "lucide-bookmark",
-                            "title": "Bookmarks"
-                        }
-                    }
-                ]
+          {
+            "id": "429459542a7a3855",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
-        ],
-        "direction": "horizontal",
-        "width": 544.5
-    },
-    "right": {
-        "id": "5f6f1c59c5a8f17f",
-        "type": "split",
+          },
+          {
+            "id": "19654c41ae320b64",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "13d9bc7ae0b12fec",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 544.5
+  },
+  "right": {
+    "id": "5f6f1c59c5a8f17f",
+    "type": "split",
+    "children": [
+      {
+        "id": "3a36ab4c51d86d51",
+        "type": "tabs",
         "children": [
-            {
-                "id": "3a36ab4c51d86d51",
-                "type": "tabs",
-                "children": [
-                    {
-                        "id": "baaae50e9df4454d",
-                        "type": "leaf",
-                        "state": {
-                            "type": "backlink",
-                            "state": {
-                                "file": "api4all/api4everyone.md",
-                                "collapseAll": false,
-                                "extraContext": false,
-                                "sortOrder": "alphabetical",
-                                "showSearch": false,
-                                "searchQuery": "",
-                                "backlinkCollapsed": false,
-                                "unlinkedCollapsed": true
-                            },
-                            "icon": "links-coming-in",
-                            "title": "Backlinks for api4everyone"
-                        }
-                    },
-                    {
-                        "id": "16dcacd2374a2192",
-                        "type": "leaf",
-                        "state": {
-                            "type": "outgoing-link",
-                            "state": {
-                                "file": "api4all/api4everyone.md",
-                                "linksCollapsed": false,
-                                "unlinkedCollapsed": true
-                            },
-                            "icon": "links-going-out",
-                            "title": "Outgoing links from api4everyone"
-                        }
-                    },
-                    {
-                        "id": "a21438941f947a52",
-                        "type": "leaf",
-                        "state": {
-                            "type": "tag",
-                            "state": {
-                                "sortOrder": "frequency",
-                                "useHierarchy": true,
-                                "showSearch": false,
-                                "searchQuery": ""
-                            },
-                            "icon": "lucide-tags",
-                            "title": "Tags"
-                        }
-                    },
-                    {
-                        "id": "655feb08a3e64da2",
-                        "type": "leaf",
-                        "state": {
-                            "type": "outline",
-                            "state": {
-                                "file": "api4all/api4everyone.md",
-                                "followCursor": false,
-                                "showSearch": false,
-                                "searchQuery": ""
-                            },
-                            "icon": "lucide-list",
-                            "title": "Outline of api4everyone"
-                        }
-                    }
-                ]
+          {
+            "id": "baaae50e9df4454d",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "api4all/api4everyone.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for api4everyone"
             }
-        ],
-        "direction": "horizontal",
-        "width": 300,
-        "collapsed": true
-    },
-    "left-ribbon": {
-        "hiddenItems": {
-            "bases:Create new base": false,
-            "switcher:Open quick switcher": false,
-            "graph:Open graph view": false,
-            "canvas:Create new canvas": false,
-            "daily-notes:Open today's daily note": false,
-            "templates:Insert template": false,
-            "command-palette:Open command palette": false
-        }
-    },
-    "active": "de7451a1f902a7fa",
-    "lastOpenFiles": []
+          },
+          {
+            "id": "16dcacd2374a2192",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "api4all/api4everyone.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from api4everyone"
+            }
+          },
+          {
+            "id": "a21438941f947a52",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "655feb08a3e64da2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "api4all/api4everyone.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of api4everyone"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Create new base": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "de7451a1f902a7fa",
+  "lastOpenFiles": [
+    "api4all/new_index.md",
+    "api4all/index.md",
+    "api4all/attachments/backup/index.md",
+    "api4all/attachments/backup/backup.md",
+    "api4all/attachments/backup",
+    "aos8createwlan/index.md",
+    "api4all/attachments/backup.md",
+    "api4all/attachments/fixindex_filename.py",
+    "api4all/attachments/Pasted image 20250813145648.png",
+    "api4all/attachments/Pasted image 20250813145724.png",
+    "api4all/attachments/Pasted_image_20250620110427.png",
+    "api4all/attachments/Pasted_image_20250619151803.png",
+    "api4all/attachments/Pasted_image_20250814074734.png",
+    "api4all/attachments/Pasted_image_20250605141837.png",
+    "api4all/attachments/Pasted_image_20250618134814.png",
+    "api4all/attachments/Pasted_image_20250620095943.png",
+    "api4all/attachments/Pasted_image_20250814074135.png",
+    "api4all/attachments/Pasted_image_20250814073841.png",
+    "api4all/attachments/fixfilenames.py",
+    "api4all/Printer Server.md",
+    "makefriedchicken/index.md",
+    "Download teams sharepoint stream videos.md",
+    "UCLA White Glove.md",
+    "UCLA Overview.md",
+    "Deloitte Discover Session.md",
+    "Deloitte Discover meeting.md",
+    "ffmpeg.md",
+    "Untitled",
+    "attachments",
+    "vxlan101/index.md",
+    "chili_recipe/index.md",
+    "Templates/New Lab Guide.md",
+    "vxlan101/attachments",
+    "vxlan101/test.md",
+    "vxlan101",
+    "Templates"
+  ]
 }
